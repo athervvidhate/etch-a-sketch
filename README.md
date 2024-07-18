@@ -1,4 +1,5 @@
-# etch-a-sketch
+# Etch a Sketch
 
-Etch A Sketch Website
+Etch A Sketch Interactive Website
+
 [Live demo](https://athervvidhate.github.io/etch-a-sketch/)
