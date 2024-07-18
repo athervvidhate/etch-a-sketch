@@ -14,10 +14,14 @@ function createGrid(size) {
         });
     }
 }
+
 const body = document.querySelector("body");
 const container = document.querySelector(".container");
 const csButton = document.querySelector("#change-size");
 const clearButton = document.querySelector("#clear");
+const sizeLabel = document.querySelector("#size-label");
+const randomButton = document.querySelector("#random");
+let randomToggle = false;
 
 csButton.addEventListener("click", () => {
     let size = parseInt(prompt("What size would you like the canvas to be?"));
@@ -32,13 +36,28 @@ csButton.addEventListener("click", () => {
 
     container.innerHTML = "";
     createGrid(size);
+    sizeLabel.textContent = "Current Size: " + size + " x " + size;
 });
 
 clearButton.addEventListener("click", () => {
     const boxes = document.querySelectorAll(".grid-elem");
     boxes.forEach(box => {
         box.style.backgroundColor = "beige";
-        
+    });
+});
+
+
+// removes anon function in addEventListener(), then replaces it
+randomButton.addEventListener("click", () => {
+    randomToggle = !randomToggle;
+    randomButton.classList.toggle("active");
+    const boxes = document.querySelectorAll(".grid-elem");
+    boxes.forEach(box => {
+        let newBox = box.cloneNode(true);
+        box.parentNode.replaceChild(newBox,box);
+        newBox.addEventListener("mouseover", () => {
+            newBox.style.backgroundColor = randomToggle ? '#' + Math.floor(Math.random() * 16777215).toString(16) : "black";
+        });  
     });
 });
 
@@ -47,10 +66,9 @@ createGrid(16);
 /* TODO
     add ui
     add slider for canvas size
-    add size display ex: 64x64
-    rainbow color
+    add size display ex: 64x64 DONE
+    add random color stylus DONE
     background color changer
     pointer color changer
-    on clikc instead of hover?
-
+    on click instead of hover?
 */
