@@ -127,7 +127,7 @@ gtButton.addEventListener("click", () => {
 
 clearButton.addEventListener("click", () => {
     document.querySelectorAll(".grid-elem").forEach(box => {
-        box.style.backgroundColor = "#D3D9D4";
+        box.style.backgroundColor = bgPicker.value;
     });
     clearButton.classList.toggle("active");
 });
