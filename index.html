@@ -13,14 +13,27 @@
     <div class="options">
         <h1>Etch-A-Sketch</h1>
         <h3 id="size-label">Current Size: 16 x 16</h3>
-        <button class = "button" id = "change-size">Change Size of Canvas</button>
-        <button class = "button" id = "eraser">Toggle Eraser</button>
-        <button class = "button" id = "clear">Clear Canvas</button>
-        <button class = "button" id = "random">Random Colored Stylus</button>
-        <button class = "button" id = "grid-toggle">Toggle Grid Lines</button>
-    </div>
-    <div class="container"></div>
+        <input type="range" class="slider" min="1" max="80" value="16">
 
+        <div class="color-pickers">
+            <div class="stylusPicker">
+                <input type="color" id ="stylus">
+                <label for="stylus">Stylus Color</label>
+            </div>
+            <div class="backgroundPicker">
+                <input type="color" id ="bg">
+                <label for="bg">Background Color</label>
+            </div>
+        </div>
+
+        <button class = "button" id = "eraser">Toggle Eraser</button>
+        <button class = "button" id = "random">Toggle Random Stylus</button>
+        <button class = "button" id = "grid-toggle">Toggle Grid Lines</button>
+        <button class = "button" id = "clear">Clear Canvas</button>
+        <a href="https://github.com/athervvidhate" class="credits">© Atherv Vidhate</a>
+    </div>
+
+    <div class="container"></div>
     <script src="script.js"></script>
 </body>
 </html>
