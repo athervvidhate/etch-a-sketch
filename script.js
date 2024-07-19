@@ -9,7 +9,7 @@ function createGrid(size) {
         box.classList.add("grid-elem");
         container.appendChild(box);
         gtToggle = false;
-
+        box.style.backgroundColor = bgPicker.value;
         box.addEventListener("mousemove", () => { 
             if (mouseDown) {
                 box.style.backgroundColor = eraserToggle ? "#D3D9D4" :
